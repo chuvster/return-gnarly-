@@ -1,8 +1,12 @@
 # FAIRE LMS - Accessible Learning Management System
 
-FAIRE LMS is a modern, accessible Learning Management System designed to provide an inclusive educational experience for all students, with particular attention to accessibility features and user-friendly design.
+FAIRE LMS is a modern, accessible Learning Management System designed to provide an inclusive educational experience for students with Dyslexia by paying particular attention to accessibility feature.
 
 ## 🌟 Features
+
+### MVP
+- **PDF transcriber**: Transcribes pdf submitted by lecturers for students to customised their reading experience
+- **OpenDyslexic Font**: To ensure dyslexic students are able to traverse through the site and read their material with ease
 
 ### Core Functionality
 - **Course Management**: Browse and manage your enrolled courses
@@ -11,42 +15,12 @@ FAIRE LMS is a modern, accessible Learning Management System designed to provide
 - **Dark Mode Support**: Complete dark mode implementation for better accessibility
 - **Real-time Search**: Search through your courses with instant results
 
-### Accessibility Features
+### Additional Accessibility Features
 - **Font Size Adjustment**: Dynamic font scaling that affects all text elements
 - **High Contrast Mode**: Enhanced contrast options for better visibility
+- **Dark Mode**: Switch between light and dark themes
 - **Reduced Motion**: Option to minimize animations for users with motion sensitivity
-- **Screen Reader Support**: Full compatibility with screen readers
-- **Keyboard Navigation**: Complete keyboard accessibility
-- **Dyslexia-Friendly Font**: OpenDyslexic font option for better readability
-- **Focus Indicators**: Enhanced focus indicators for better navigation
-- **Skip Links**: Quick navigation to main content
-
-### User Interface
-- **Modern Design**: Clean, intuitive interface with rounded corners and shadows
-- **Fixed Navigation**: Sticky navigation bar for easy access
-- **Tooltips**: Helpful tooltips for all interactive elements
-- **Loading States**: Smooth loading animations and states
-- **Error Handling**: Graceful error handling with user-friendly messages
-
-## 🎨 Design System
-
-### Color Scheme
-- **Light Mode**:
-  - Background: `#FFFEFA`
-  - Primary: `#9BC2E4`
-  - Text: `#3F3734`
-  - Cards: White with subtle shadows
-
-- **Dark Mode**:
-  - Background: `#1E2A36`
-  - Navbar: `#2B4C6F`
-  - Cards: `#34596F`
-  - Text: `#FFFFF3`
-
-### Typography
-- **Primary Font**: System fonts with OpenDyslexic option
-- **Dynamic Sizing**: Scalable font system (16px base, up to 3x scaling)
-- **Hierarchy**: Clear heading structure (H1-H6) with proportional scaling
+- **Voice Settings**: Change voice speed for speech functions
 
 ## 🛠 Technology Stack
 
@@ -98,132 +72,8 @@ FAIRE LMS is a modern, accessible Learning Management System designed to provide
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📱 Usage
 
-### Navigation
-- **My Courses**: View all your enrolled courses
-- **Assessments**: Access your assessments and track progress
-- **Accessibility Panel**: Customize your viewing experience
-
-### Accessibility Settings
-1. Click the **Settings** icon in the top navigation
-2. Adjust the following settings:
-   - **Font Size**: Scale text from 16px to 48px
-   - **High Contrast**: Enhance color contrast
-   - **Reduced Motion**: Minimize animations
-   - **Dark Mode**: Switch between light and dark themes
-   - **Dyslexia-Friendly Font**: Enable OpenDyslexic font
-
-### Course Management
-- Browse courses in the main dashboard
-- Click on any course to view details
-- Access course modules, assignments, and resources
-- Track your progress through course completion
-
-## 🏗 Project Structure
-
-```
-faire-lms/
-├── src/
-│   ├── components/          # React components
-│   │   ├── ui/             # Reusable UI components
-│   │   ├── AccessibilityPanel.tsx
-│   │   ├── AssessmentPage.tsx
-│   │   ├── CourseDetail.tsx
-│   │   ├── CourseGrid.tsx
-│   │   ├── LecturePage.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── StudentPage.tsx
-│   │   └── ThemeSwitch.tsx
-│   ├── contexts/           # React contexts
-│   │   ├── FontProvider.tsx
-│   │   └── ThemeProvider.tsx
-│   ├── hooks/              # Custom React hooks
-│   ├── lib/                # Utility functions
-│   ├── pages/              # Next.js pages
-│   └── styles/             # Global styles
-├── public/                 # Static assets
-├── next.config.mjs         # Next.js configuration
-├── tailwind.config.ts      # Tailwind CSS configuration
-└── package.json            # Dependencies and scripts
-```
-
-## 🎯 Key Components
-
-### AccessibilityPanel
-- Centralized accessibility controls
-- Real-time preview of changes
-- Persistent settings storage
-
-### CourseGrid
-- Responsive grid layout
-- Course cards with progress indicators
-- Hover effects and animations
-
-### Navigation
-- Fixed positioning
-- Mobile-responsive menu
-- Active state indicators
-
-## 🔧 Development
-
-### Available Scripts
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-```
-
-### Code Style
-- Follow TypeScript best practices
-- Use functional components with hooks
-- Implement proper accessibility attributes
-- Follow Tailwind CSS conventions
-
-### Adding New Features
-1. Create components in `src/components/`
-2. Add types in component files or create separate type files
-3. Update navigation if needed
-4. Test accessibility features
-5. Update this README
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure build settings:
-   - Build Command: `npm run build`
-   - Output Directory: `.next`
-3. Deploy automatically on push to main branch
-
-### Other Platforms
-The application can be deployed to any platform that supports Next.js:
-- Netlify
-- AWS Amplify
-- Railway
-- DigitalOcean App Platform
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-- Follow the existing code style
-- Add proper TypeScript types
-- Include accessibility features
-- Test on multiple devices and screen sizes
-- Update documentation as needed
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+## 👾 Referrences
 
 - **Lucide Icons**: Beautiful, customizable icons
 - **Radix UI**: Accessible component primitives
@@ -232,16 +82,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Google Fonts** - For Varela Round font (https://fonts.google.com/specimen/Varela+Round)
 - **SpeechSynthesisUtterance** - Used for text-to-speech functionality (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance)
 - **Softgen AI** - Application monitoring
-
-## 🔮 Roadmap
-
-- [ ] Student collaboration features
-- [ ] Advanced assessment types
-- [ ] Mobile app development
-- [ ] Integration with external LMS systems
-- [ ] Advanced analytics and reporting
-- [ ] Multi-language support
-- [ ] Offline functionality
 
 ---
 
