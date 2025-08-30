@@ -105,8 +105,8 @@ export default function AssessmentPage() {
     }
   };
 
-  const AssessmentCard = ({ assessment }: { assessment: Assessment }) => (
-    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+           const AssessmentCard = ({ assessment }: { assessment: Assessment }) => (
+      <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 dark:bg-[#34596F]">
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-3">
@@ -114,8 +114,8 @@ export default function AssessmentPage() {
               {getTypeIcon(assessment.type)}
             </div>
             <div>
-              <CardTitle className="text-lg mb-1">{assessment.title}</CardTitle>
-              <p className="text-sm text-gray-600">
+              <CardTitle className="text-lg mb-1 dark:text-[#FFFFF3]">{assessment.title}</CardTitle>
+              <p className="text-sm text-gray-600 dark:text-[#FFFFF3]/80">
                 {assessment.courseCode} - {assessment.course}
               </p>
             </div>
@@ -127,9 +127,9 @@ export default function AssessmentPage() {
       </CardHeader>
       
       <CardContent className="space-y-4">
-        <p className="text-sm text-gray-700">{assessment.description}</p>
+        <p className="text-sm text-gray-700 dark:text-[#FFFFF3]">{assessment.description}</p>
         
-        <div className="flex items-center gap-4 text-sm text-gray-600">
+        <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-[#FFFFF3]/80">
           <div className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />
             <span>Due: {new Date(assessment.dueDate).toLocaleDateString()}</span>
@@ -144,10 +144,10 @@ export default function AssessmentPage() {
         </div>
 
         {assessment.score && (
-          <div className="bg-green-50 rounded-lg p-3">
+          <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-3">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Your Score</span>
-              <span className="text-lg font-bold text-green-600">
+              <span className="text-sm font-medium dark:text-[#FFFFF3]">Your Score</span>
+              <span className="text-lg font-bold text-green-600 dark:text-green-400">
                 {assessment.score}/{assessment.totalMarks}
               </span>
             </div>
@@ -159,9 +159,9 @@ export default function AssessmentPage() {
         )}
 
         {assessment.attempts !== undefined && (
-          <div className="text-xs text-gray-500">
-            Attempts: {assessment.attempts}/{assessment.maxAttempts}
-          </div>
+                      <div className="text-xs text-gray-500 dark:text-[#FFFFF3]/60">
+              Attempts: {assessment.attempts}/{assessment.maxAttempts}
+            </div>
         )}
 
         <div className="flex gap-2 pt-2">
@@ -186,8 +186,8 @@ export default function AssessmentPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-[#3F3734] mb-4">Assessments</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-4xl font-bold text-[#3F3734] dark:text-[#FFFFF3] mb-4">Assessments</h1>
+        <p className="text-lg text-gray-600 dark:text-[#FFFFF3]/80">
           Track your assignments, quizzes, and exams across all courses
         </p>
       </div>
@@ -258,7 +258,7 @@ export default function AssessmentPage() {
         </TabsList>
 
         <TabsContent value="upcoming" className="space-y-6">
-          <h3 className="text-2xl font-semibold mb-4">Upcoming Assessments</h3>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-[#FFFFF3]">Upcoming Assessments</h3>
           {upcomingAssessments.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {upcomingAssessments.map((assessment) => (
@@ -266,18 +266,18 @@ export default function AssessmentPage() {
               ))}
             </div>
           ) : (
-            <Card className="text-center py-12">
+            <Card className="text-center py-12 dark:bg-[#34596F]">
               <CardContent>
                 <CheckCircle className="h-16 w-16 mx-auto mb-4 text-green-500" />
-                <h3 className="text-lg font-semibold mb-2">All caught up!</h3>
-                <p className="text-gray-600">No upcoming assessments at the moment.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-[#FFFFF3]">All caught up!</h3>
+                <p className="text-gray-600 dark:text-[#FFFFF3]/80">No upcoming assessments at the moment.</p>
               </CardContent>
             </Card>
           )}
         </TabsContent>
 
         <TabsContent value="progress" className="space-y-6">
-          <h3 className="text-2xl font-semibold mb-4">In Progress</h3>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-[#FFFFF3]">In Progress</h3>
           {inProgressAssessments.length > 0 ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {inProgressAssessments.map((assessment) => (
@@ -285,18 +285,18 @@ export default function AssessmentPage() {
               ))}
             </div>
           ) : (
-            <Card className="text-center py-12">
+            <Card className="text-center py-12 dark:bg-[#34596F]">
               <CardContent>
                 <Clock className="h-16 w-16 mx-auto mb-4 text-gray-400" />
-                <h3 className="text-lg font-semibold mb-2">No ongoing assessments</h3>
-                <p className="text-gray-600">Start an upcoming assessment to see it here.</p>
+                <h3 className="text-lg font-semibold mb-2 dark:text-[#FFFFF3]">No ongoing assessments</h3>
+                <p className="text-gray-600 dark:text-[#FFFFF3]/80">Start an upcoming assessment to see it here.</p>
               </CardContent>
             </Card>
           )}
         </TabsContent>
 
         <TabsContent value="completed" className="space-y-6">
-          <h3 className="text-2xl font-semibold mb-4">Completed Assessments</h3>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-[#FFFFF3]">Completed Assessments</h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {completedAssessments.map((assessment) => (
               <AssessmentCard key={assessment.id} assessment={assessment} />

@@ -58,8 +58,8 @@ export default function Navigation({
             onClick={item.action}
             className={`text-lg font-bold px-3 py-2 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white transition-colors ${
               item.active 
-                ? "text-[#3F3734] border-b-2 border-[#3F3734]" 
-                : "text-[#3F3734]/80 hover:text-[#3F3734]"
+                ? "text-[#3F3734] dark:text-[#FFFFF3] border-b-2 border-[#3F3734] dark:border-[#FFFFF3]" 
+                : "text-[#3F3734]/80 dark:text-[#FFFFF3]/80 hover:text-[#3F3734] dark:hover:text-[#FFFFF3]"
             }`}
             aria-current={item.active ? "page" : undefined}
           >
@@ -80,8 +80,8 @@ export default function Navigation({
                 onClick={item.action}
                 className={`w-full justify-start text-lg font-bold px-4 py-3 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white ${
                   item.active 
-                    ? "text-[#3F3734] bg-white/10" 
-                    : "text-[#3F3734]/80"
+                    ? "text-[#3F3734] dark:text-[#FFFFF3] bg-white/10" 
+                    : "text-[#3F3734]/80 dark:text-[#FFFFF3]/80"
                 }`}
                 aria-current={item.active ? "page" : undefined}
               >

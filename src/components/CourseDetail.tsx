@@ -61,7 +61,7 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
       <Button
         variant="ghost"
         onClick={onBack}
-        className="mb-6 hover:bg-[#9BC2E4]/20"
+        className="mb-6 hover:bg-[#9BC2E4]/20 dark:text-[#FFFFF3]"
       >
         <ArrowLeft className="h-4 w-4 mr-2" />
         Back to Courses
@@ -102,12 +102,12 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
       {/* Progress Section */}
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle>Your Progress</CardTitle>
+          <CardTitle className="dark:text-[#FFFFF3]">Your Progress</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <Progress value={course.progress} className="h-3" />
-            <div className="flex justify-between text-sm text-gray-600">
+            <div className="flex justify-between text-sm text-gray-600 dark:text-[#FFFFF3]/80">
               <span>{Math.floor(modules.length * (course.progress / 100))} of {modules.length} modules completed</span>
               <span>{course.progress}% complete</span>
             </div>
@@ -124,14 +124,14 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
         </TabsList>
 
         <TabsContent value="modules" className="space-y-4">
-          <h3 className="text-2xl font-bold mb-6">Course Modules</h3>
+          <h3 className="text-2xl font-bold mb-6 dark:text-[#FFFFF3]">Course Modules</h3>
           {modules.map((module, index) => (
-            <Card
-              key={module.id}
-              className={`transition-all duration-200 hover:shadow-md ${
-                module.completed ? "bg-green-50 border-green-200" : ""
-              }`}
-            >
+                         <Card
+               key={module.id}
+               className={`transition-all duration-200 hover:shadow-md dark:bg-[#34596F] ${
+                 module.completed ? "bg-green-50 border-green-200" : ""
+               }`}
+             >
               <CardContent className="flex items-center justify-between p-6">
                 <div className="flex items-center gap-4">
                   {module.completed ? (
@@ -146,8 +146,8 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
                     {(module.type === "assignment" || module.type === "quiz") && <BookOpen className="h-5 w-5 text-orange-600" />}
                     
                     <div>
-                      <h4 className="font-semibold">{module.title}</h4>
-                      <p className="text-sm text-gray-600">{module.duration}</p>
+                      <h4 className="font-semibold dark:text-[#FFFFF3]">{module.title}</h4>
+                      <p className="text-sm text-gray-600 dark:text-[#FFFFF3]/80">{module.duration}</p>
                     </div>
                   </div>
                 </div>
@@ -165,13 +165,13 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
         </TabsContent>
 
         <TabsContent value="assignments" className="space-y-4">
-          <h3 className="text-2xl font-bold mb-6">Assignments</h3>
+          <h3 className="text-2xl font-bold mb-6 dark:text-[#FFFFF3]">Assignments</h3>
           {assignments.map((assignment) => (
-            <Card key={assignment.id}>
+                         <Card key={assignment.id} className="dark:bg-[#34596F]">
               <CardContent className="flex items-center justify-between p-6">
                 <div>
-                  <h4 className="font-semibold mb-1">{assignment.title}</h4>
-                  <p className="text-sm text-gray-600">Due: {assignment.dueDate}</p>
+                  <h4 className="font-semibold mb-1 dark:text-[#FFFFF3]">{assignment.title}</h4>
+                  <p className="text-sm text-gray-600 dark:text-[#FFFFF3]/80">Due: {assignment.dueDate}</p>
                   {assignment.score && (
                     <p className="text-sm font-semibold text-green-600">Score: {assignment.score}%</p>
                   )}
@@ -194,26 +194,26 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
         </TabsContent>
 
         <TabsContent value="resources" className="space-y-4">
-          <h3 className="text-2xl font-bold mb-6">Course Resources</h3>
+          <h3 className="text-2xl font-bold mb-6 dark:text-[#FFFFF3]">Course Resources</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card>
+            <Card className="dark:bg-[#34596F]">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Download className="h-5 w-5 text-blue-600" />
-                  <h4 className="font-semibold">Course Syllabus</h4>
+                  <h4 className="font-semibold dark:text-[#FFFFF3]">Course Syllabus</h4>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">Complete course outline and schedule</p>
+                <p className="text-sm text-gray-600 dark:text-[#FFFFF3]/80 mb-4">Complete course outline and schedule</p>
                 <Button size="sm" variant="outline">Download</Button>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="dark:bg-[#34596F]">
               <CardContent className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <FileText className="h-5 w-5 text-green-600" />
-                  <h4 className="font-semibold">Lecture Notes</h4>
+                  <h4 className="font-semibold dark:text-[#FFFFF3]">Lecture Notes</h4>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">All lecture slides and notes</p>
+                <p className="text-sm text-gray-600 dark:text-[#FFFFF3]/80 mb-4">All lecture slides and notes</p>
                                  <Button 
                    size="sm" 
                    variant="outline"

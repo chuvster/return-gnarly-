@@ -170,24 +170,26 @@ export default function CourseGrid({ onCourseSelect }: CourseGridProps) {
           </div>
 
           {/* Course Footer */}
-          <div 
-            className="h-20 px-4 py-3 flex items-center justify-between"
-            style={{ backgroundColor: course.color }}
-          >
+                     <div 
+             className="h-20 px-4 py-3 flex items-center justify-between dark:!bg-[#34596F]"
+             style={{ 
+               backgroundColor: course.color
+             }}
+           >
             <div className="flex-1 min-w-0">
               <h3 
                 id={`course-title-${course.id}`}
-                className="text-[#3F3734] font-bold text-lg leading-tight truncate"
+                className="text-[#3F3734] dark:text-[#FFFFF3] font-bold text-lg leading-tight truncate"
               >
                 {course.code} - {course.title}
               </h3>
-              <p className="text-[#3F3734]/80 text-sm truncate">
+              <p className="text-[#3F3734]/80 dark:text-[#FFFFF3]/80 text-sm truncate">
                 {course.instructor}
               </p>
             </div>
 
             <ChevronRight 
-              className="h-5 w-5 text-[#3F3734] group-hover:translate-x-1 transition-transform duration-300" 
+              className="h-5 w-5 text-[#3F3734] dark:text-[#FFFFF3] group-hover:translate-x-1 transition-transform duration-300" 
               aria-hidden="true"
             />
           </div>

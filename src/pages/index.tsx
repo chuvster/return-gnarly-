@@ -61,7 +61,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <div className="min-h-screen bg-[#FFFEFA] relative overflow-hidden">
+      <div className="min-h-screen bg-[#FFFEFA] dark:bg-[#1E2A36] relative overflow-hidden">
         {/* Accessibility Panel */}
         <AccessibilityPanel 
           isOpen={isAccessibilityPanelOpen} 
@@ -70,7 +70,7 @@ export default function HomePage() {
 
         {/* Header */}
         <header 
-          className="w-full h-21 bg-[#9BC2E4] rounded-b-[20px] shadow-lg relative z-10"
+          className="w-full h-21 bg-[#9BC2E4] dark:bg-[#2B4C6F] rounded-b-[20px] shadow-lg relative z-10"
           role="banner"
           aria-label="Main navigation"
         >
@@ -113,7 +113,7 @@ export default function HomePage() {
                    variant="ghost"
                    size="sm"
                    onClick={toggleOpenDyslexic}
-                   className={`text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white transition-colors ${
+                   className={`text-[#3F3734] dark:text-[#FFFFF3] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white transition-colors ${
                      isOpenDyslexic ? "bg-white/10" : ""
                    }`}
                    aria-label={`${isOpenDyslexic ? 'Disable' : 'Enable'} OpenDyslexic font`}
@@ -139,7 +139,7 @@ export default function HomePage() {
                     variant="ghost"
                     size="sm"
                     onClick={() => setIsAccessibilityPanelOpen(true)}
-                    className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    className="text-[#3F3734] dark:text-[#FFFFF3] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
                     aria-label="Open accessibility settings"
                   >
                     <Settings className="h-5 w-5" />
@@ -157,7 +157,7 @@ export default function HomePage() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    className="text-[#3F3734] dark:text-[#FFFFF3] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
                     aria-label="Notifications"
                   >
                     <Bell className="h-5 w-5" />
@@ -174,10 +174,10 @@ export default function HomePage() {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="w-12 h-12 rounded-full border-2 border-[#3F3734] bg-[#D9D9D9] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    className="w-12 h-12 rounded-full border-2 border-[#3F3734] dark:border-[#FFFFF3] bg-[#D9D9D9] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
                     aria-label="User profile menu"
                   >
-                    <User className="h-6 w-6 text-[#3F3734]" />
+                    <User className="h-6 w-6 text-[#3F3734] dark:text-[#FFFFF3]" />
                   </Button>
                   
                   {/* Tooltip */}
@@ -197,7 +197,7 @@ export default function HomePage() {
               {/* Page Title & Search */}
               <div className="mb-8">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8">
-                  <h2 className="text-[#3F3734] text-3xl lg:text-4xl font-bold">
+                  <h2 className="text-[#3F3734] dark:text-[#FFFFF3] text-3xl lg:text-4xl font-bold">
                     My Courses
                   </h2>
                   

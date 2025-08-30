@@ -138,19 +138,19 @@
 
 .dark {
   --background: 30 25% 17%; /* #1E2A36 */
-  --foreground: 60 67% 94%; /* #FBF8E6 */
+  --foreground: 60 100% 97%; /* #FFFFF3 */
   --card: 30 25% 17%; /* #1E2A36 */
-  --card-foreground: 60 67% 94%; /* #FBF8E6 */
+  --card-foreground: 60 100% 97%; /* #FFFFF3 */
   --popover: 30 25% 17%; /* #1E2A36 */
-  --popover-foreground: 60 67% 94%; /* #FBF8E6 */
-  --primary: 60 67% 94%; /* #FBF8E6 */
+  --popover-foreground: 60 100% 97%; /* #FFFFF3 */
+  --primary: 60 100% 97%; /* #FFFFF3 */
   --primary-foreground: 30 25% 17%; /* #1E2A36 */
   --secondary: 30 25% 17%; /* #1E2A36 */
-  --secondary-foreground: 60 67% 94%; /* #FBF8E6 */
+  --secondary-foreground: 60 100% 97%; /* #FFFFF3 */
   --muted: 30 25% 17%; /* #1E2A36 */
-  --muted-foreground: 60 67% 94%; /* #FBF8E6 */
+  --muted-foreground: 60 100% 97%; /* #FFFFF3 */
   --accent: 30 25% 17%; /* #1E2A36 */
-  --accent-foreground: 60 67% 94%; /* #FBF8E6 */
+  --accent-foreground: 60 100% 97%; /* #FFFFF3 */
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 85.7% 97.3%;
   --border: 30 25% 17%; /* #1E2A36 */
@@ -179,7 +179,7 @@ body {
   /* Background color */
   background-color: #1E2A36 !important;
   /* Dark mode text color */
-  color: #FBF8E6 !important;
+  color: #FFFFF3 !important;
 }
 
 /* Dark mode navbar styling */
