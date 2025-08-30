@@ -127,7 +127,7 @@ export default function CourseGrid({ onCourseSelect }: CourseGridProps) {
       {mockCourses.map((course, index) => (
         <Card
           key={course.id}
-          className="group relative overflow-hidden bg-white rounded-3xl shadow-lg shadow-neutral-200/50 border-0 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+          className="group relative overflow-hidden bg-white dark:bg-[#34596F] rounded-3xl shadow-lg shadow-neutral-200/50 border-0 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
           role="article"
           aria-labelledby={`course-title-${course.id}`}
           tabIndex={0}

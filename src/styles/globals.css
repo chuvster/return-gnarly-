@@ -137,24 +137,24 @@
 }
 
 .dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --background: 30 25% 17%; /* #1E2A36 */
+  --foreground: 60 67% 94%; /* #FBF8E6 */
+  --card: 30 25% 17%; /* #1E2A36 */
+  --card-foreground: 60 67% 94%; /* #FBF8E6 */
+  --popover: 30 25% 17%; /* #1E2A36 */
+  --popover-foreground: 60 67% 94%; /* #FBF8E6 */
+  --primary: 60 67% 94%; /* #FBF8E6 */
+  --primary-foreground: 30 25% 17%; /* #1E2A36 */
+  --secondary: 30 25% 17%; /* #1E2A36 */
+  --secondary-foreground: 60 67% 94%; /* #FBF8E6 */
+  --muted: 30 25% 17%; /* #1E2A36 */
+  --muted-foreground: 60 67% 94%; /* #FBF8E6 */
+  --accent: 30 25% 17%; /* #1E2A36 */
+  --accent-foreground: 60 67% 94%; /* #FBF8E6 */
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 85.7% 97.3%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
+  --border: 30 25% 17%; /* #1E2A36 */
+  --input: 30 25% 17%; /* #1E2A36 */
   --ring: 240 4.9% 83.9%;
   --chart-1: 220 70% 50%;
   --chart-2: 160 60% 45%;
@@ -172,6 +172,44 @@ body {
   background: hsl(var(--background));
   font-size: var(--base-font-size);
   filter: contrast(var(--contrast));
+}
+
+/* Custom Dark Mode Styles */
+.dark {
+  /* Background color */
+  background-color: #1E2A36 !important;
+  /* Dark mode text color */
+  color: #FBF8E6 !important;
+}
+
+/* Dark mode navbar styling */
+.dark header {
+  background-color: #2B4C6F !important;
+}
+
+/* Dark mode course cards */
+.dark .bg-white {
+  background-color: #34596F !important;
+}
+
+/* Dark mode specific course card styling */
+.dark .group.relative.overflow-hidden.bg-white {
+  background-color: #34596F !important;
+}
+
+/* Dark mode card backgrounds */
+.dark .bg-gray-50 {
+  background-color: #34596F !important;
+}
+
+/* Dark mode accessibility panel background */
+.dark .bg-white.shadow-2xl {
+  background-color: #1E2A36 !important;
+}
+
+/* Keep search bar styling unchanged in dark mode */
+.dark .bg-\[#F6F6F6\] {
+  background-color: #F6F6F6 !important;
 }
 
 /* High Contrast Mode */

@@ -84,7 +84,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
 
       {/* Panel */}
       <div
-        className="fixed right-0 top-0 h-full w-full max-w-md bg-white shadow-2xl z-50 overflow-y-auto"
+        className="fixed right-0 top-0 h-full w-full max-w-md bg-white dark:bg-[#1E2A36] shadow-2xl z-50 overflow-y-auto"
         role="dialog"
         aria-labelledby="accessibility-title"
         aria-modal="true"
@@ -92,7 +92,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
         <div className="p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
-            <h2 id="accessibility-title" className="text-2xl font-bold text-[#3F3734] flex items-center gap-2">
+            <h2 id="accessibility-title" className="text-2xl font-bold text-[#3F3734] dark:text-[#FBF8E6] flex items-center gap-2">
               <Eye className="h-6 w-6" />
               Accessibility Settings
             </h2>
@@ -119,7 +119,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
               <CardContent className="space-y-4">
                 {/* Font Size */}
                 <div>
-                  <label htmlFor="font-size" className="block text-sm font-medium mb-2 text-[#3F3734]">
+                  <label htmlFor="font-size" className="block text-sm font-medium mb-2 text-[#3F3734] dark:text-[#FBF8E6]">
                     Font Size: {fontSize[0]}px
                   </label>
                   <Slider
@@ -139,7 +139,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
 
                 {/* Contrast */}
                 <div>
-                  <label htmlFor="contrast" className="block text-sm font-medium mb-2 text-[#3F3734]">
+                  <label htmlFor="contrast" className="block text-sm font-medium mb-2 text-[#3F3734] dark:text-[#FBF8E6]">
                     Contrast: {contrast[0]}%
                   </label>
                   <Slider
@@ -159,8 +159,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
 
                 {/* Theme Toggles */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <label htmlFor="dark-mode" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                    <label htmlFor="dark-mode" className="text-sm font-medium flex items-center gap-2 text-[#3F3734] dark:text-[#FBF8E6]">
                       {darkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
                       Dark Mode
                     </label>
@@ -172,8 +172,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                      />
                   </div>
 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <label htmlFor="high-contrast" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                    <label htmlFor="high-contrast" className="text-sm font-medium flex items-center gap-2 text-[#3F3734] dark:text-[#FBF8E6]">
                       <Contrast className="h-4 w-4" />
                       High Contrast
                     </label>
@@ -185,8 +185,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                      />
                   </div>
 
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <label htmlFor="reduced-motion" className="text-sm font-medium text-[#3F3734]">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                    <label htmlFor="reduced-motion" className="text-sm font-medium text-[#3F3734] dark:text-[#FBF8E6]">
                       Reduce Motion
                     </label>
                                          <Switch
@@ -209,8 +209,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <label htmlFor="keyboard-nav" className="text-sm font-medium text-[#3F3734]">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                  <label htmlFor="keyboard-nav" className="text-sm font-medium text-[#3F3734] dark:text-[#FBF8E6]">
                     Enhanced Keyboard Navigation
                   </label>
                                      <Switch
@@ -221,8 +221,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                    />
                 </div>
 
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <label htmlFor="focus-indicator" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                  <label htmlFor="focus-indicator" className="text-sm font-medium flex items-center gap-2 text-[#3F3734] dark:text-[#FBF8E6]">
                     <MousePointer className="h-4 w-4" />
                     Enhanced Focus Indicators
                   </label>
@@ -245,8 +245,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <label htmlFor="screen-reader" className="text-sm font-medium text-[#3F3734]">
+                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
+                  <label htmlFor="screen-reader" className="text-sm font-medium text-[#3F3734] dark:text-[#FBF8E6]">
                     Screen Reader Support
                   </label>
                                      <Switch
@@ -258,7 +258,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 </div>
 
                 <div>
-                  <label htmlFor="voice-speed" className="block text-sm font-medium mb-2 text-[#3F3734]">
+                  <label htmlFor="voice-speed" className="block text-sm font-medium mb-2 text-[#3F3734] dark:text-[#FBF8E6]">
                     Voice Speed: {voiceSpeed[0]}x
                   </label>
                   <Slider
@@ -279,7 +279,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 <Button
                   onClick={() => speakText("This is a test of the text-to-speech functionality")}
                   variant="outline"
-                  className="w-full border-[#9BC2E4] text-[#3F3734] hover:bg-[#9BC2E4] hover:text-white"
+                  className="w-full border-[#9BC2E4] text-[#3F3734] dark:text-[#FBF8E6] hover:bg-[#9BC2E4] hover:text-white"
                 >
                   Test Voice
                 </Button>
@@ -304,7 +304,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     setVoiceSpeed([1]);
                   }}
                   variant="outline"
-                  className="w-full border-[#9BC2E4] text-[#3F3734] hover:bg-[#9BC2E4] hover:text-white"
+                  className="w-full border-[#9BC2E4] text-[#3F3734] dark:text-[#FBF8E6] hover:bg-[#9BC2E4] hover:text-white"
                 >
                   Reset All Settings
                 </Button>
