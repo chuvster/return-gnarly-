@@ -14,6 +14,94 @@
   font-display: swap;
 }
 
+/* Custom Slider Styles for Accessibility Panel */
+[data-slider] {
+  background-color: #F6F6F6 !important;
+  border: 1px solid #919191 !important;
+  border-radius: 9999px !important;
+  height: 8px !important;
+}
+
+[data-slider] > [data-slider-range] {
+  background-color: #919191 !important;
+  border-radius: 9999px !important;
+}
+
+[data-slider] > [data-slider-thumb] {
+  background-color: #919191 !important;
+  border: 2px solid white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+[data-slider] > [data-slider-thumb]:hover {
+  background-color: #7A7A7A !important;
+}
+
+[data-slider] > [data-slider-thumb]:focus {
+  outline: 2px solid #919191 !important;
+  outline-offset: 2px !important;
+}
+
+.slider-track {
+  background-color: #F6F6F6 !important;
+  border: 1px solid #919191 !important;
+  border-radius: 9999px !important;
+  height: 8px !important;
+}
+
+.slider-range {
+  background-color: #919191 !important;
+  border-radius: 9999px !important;
+}
+
+.slider-thumb {
+  background-color: #919191 !important;
+  border: 2px solid white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.slider-thumb:hover {
+  background-color: #7A7A7A !important;
+}
+
+.slider-thumb:focus {
+  outline: 2px solid #919191 !important;
+  outline-offset: 2px !important;
+}
+
+[data-slot="slider-track"] {
+  background-color: #F6F6F6 !important;
+  border: 1px solid #919191 !important;
+  border-radius: 9999px !important;
+  height: 8px !important;
+}
+
+[data-slot="slider-range"] {
+  background-color: #919191 !important;
+  border-radius: 9999px !important;
+}
+
+[data-slot="slider-thumb"] {
+  background-color: #919191 !important;
+  border: 2px solid white !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+[data-slot="slider-thumb"]:hover {
+  background-color: #7A7A7A !important;
+}
+
+[data-slot="slider-thumb"]:focus {
+  outline: 2px solid #919191 !important;
+  outline-offset: 2px !important;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 240 10% 3.9%;

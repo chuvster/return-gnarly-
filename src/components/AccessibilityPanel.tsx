@@ -77,7 +77,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/50 z-40"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -119,7 +119,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
               <CardContent className="space-y-4">
                 {/* Font Size */}
                 <div>
-                  <label htmlFor="font-size" className="block text-sm font-medium mb-2">
+                  <label htmlFor="font-size" className="block text-sm font-medium mb-2 text-[#3F3734]">
                     Font Size: {fontSize[0]}px
                   </label>
                   <Slider
@@ -131,12 +131,15 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     onValueChange={setFontSize}
                     className="w-full"
                     aria-label="Adjust font size"
+                    thumbClassName="bg-[#9BC2E4] border-2 border-white shadow-lg hover:bg-[#7BA8D1] focus:ring-2 focus:ring-[#9BC2E4] focus:ring-offset-2 w-6 h-6"
+                    trackClassName="bg-[#F6F6F6] border-2 border-[#9BC2E4] rounded-full h-3 shadow-inner"
+                    rangeClassName="bg-[#9BC2E4]"
                   />
                 </div>
 
                 {/* Contrast */}
                 <div>
-                  <label htmlFor="contrast" className="block text-sm font-medium mb-2">
+                  <label htmlFor="contrast" className="block text-sm font-medium mb-2 text-[#3F3734]">
                     Contrast: {contrast[0]}%
                   </label>
                   <Slider
@@ -148,47 +151,50 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     onValueChange={setContrast}
                     className="w-full"
                     aria-label="Adjust contrast level"
+                    thumbClassName="bg-[#9BC2E4] border-2 border-white shadow-lg hover:bg-[#7BA8D1] focus:ring-2 focus:ring-[#9BC2E4] focus:ring-offset-2 w-6 h-6"
+                    trackClassName="bg-[#F6F6F6] border-2 border-[#9BC2E4] rounded-full h-3 shadow-inner"
+                    rangeClassName="bg-[#9BC2E4]"
                   />
                 </div>
 
                 {/* Theme Toggles */}
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="dark-mode" className="text-sm font-medium flex items-center gap-2">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <label htmlFor="dark-mode" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
                       {darkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
                       Dark Mode
                     </label>
-                    <Switch
-                      id="dark-mode"
-                      checked={darkMode}
-                      onCheckedChange={setDarkMode}
-                      aria-label="Toggle dark mode"
-                    />
+                                         <Switch
+                       id="dark-mode"
+                       checked={darkMode}
+                       onCheckedChange={setDarkMode}
+                       aria-label="Toggle dark mode"
+                     />
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="high-contrast" className="text-sm font-medium flex items-center gap-2">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <label htmlFor="high-contrast" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
                       <Contrast className="h-4 w-4" />
                       High Contrast
                     </label>
-                    <Switch
-                      id="high-contrast"
-                      checked={highContrast}
-                      onCheckedChange={setHighContrast}
-                      aria-label="Toggle high contrast mode"
-                    />
+                                         <Switch
+                       id="high-contrast"
+                       checked={highContrast}
+                       onCheckedChange={setHighContrast}
+                       aria-label="Toggle high contrast mode"
+                     />
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <label htmlFor="reduced-motion" className="text-sm font-medium">
+                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <label htmlFor="reduced-motion" className="text-sm font-medium text-[#3F3734]">
                       Reduce Motion
                     </label>
-                    <Switch
-                      id="reduced-motion"
-                      checked={reducedMotion}
-                      onCheckedChange={setReducedMotion}
-                      aria-label="Toggle reduced motion"
-                    />
+                                         <Switch
+                       id="reduced-motion"
+                       checked={reducedMotion}
+                       onCheckedChange={setReducedMotion}
+                       aria-label="Toggle reduced motion"
+                     />
                   </div>
                 </div>
               </CardContent>
@@ -203,29 +209,29 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <label htmlFor="keyboard-nav" className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <label htmlFor="keyboard-nav" className="text-sm font-medium text-[#3F3734]">
                     Enhanced Keyboard Navigation
                   </label>
-                  <Switch
-                    id="keyboard-nav"
-                    checked={keyboardNav}
-                    onCheckedChange={setKeyboardNav}
-                    aria-label="Toggle enhanced keyboard navigation"
-                  />
+                                     <Switch
+                     id="keyboard-nav"
+                     checked={keyboardNav}
+                     onCheckedChange={setKeyboardNav}
+                     aria-label="Toggle enhanced keyboard navigation"
+                   />
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <label htmlFor="focus-indicator" className="text-sm font-medium flex items-center gap-2">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <label htmlFor="focus-indicator" className="text-sm font-medium flex items-center gap-2 text-[#3F3734]">
                     <MousePointer className="h-4 w-4" />
                     Enhanced Focus Indicators
                   </label>
-                  <Switch
-                    id="focus-indicator"
-                    checked={focusIndicator}
-                    onCheckedChange={setFocusIndicator}
-                    aria-label="Toggle enhanced focus indicators"
-                  />
+                                     <Switch
+                     id="focus-indicator"
+                     checked={focusIndicator}
+                     onCheckedChange={setFocusIndicator}
+                     aria-label="Toggle enhanced focus indicators"
+                   />
                 </div>
               </CardContent>
             </Card>
@@ -239,20 +245,20 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <label htmlFor="screen-reader" className="text-sm font-medium">
+                <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <label htmlFor="screen-reader" className="text-sm font-medium text-[#3F3734]">
                     Screen Reader Support
                   </label>
-                  <Switch
-                    id="screen-reader"
-                    checked={screenReader}
-                    onCheckedChange={setScreenReader}
-                    aria-label="Toggle screen reader support"
-                  />
+                                     <Switch
+                     id="screen-reader"
+                     checked={screenReader}
+                     onCheckedChange={setScreenReader}
+                     aria-label="Toggle screen reader support"
+                   />
                 </div>
 
                 <div>
-                  <label htmlFor="voice-speed" className="block text-sm font-medium mb-2">
+                  <label htmlFor="voice-speed" className="block text-sm font-medium mb-2 text-[#3F3734]">
                     Voice Speed: {voiceSpeed[0]}x
                   </label>
                   <Slider
@@ -264,13 +270,16 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     onValueChange={setVoiceSpeed}
                     className="w-full"
                     aria-label="Adjust voice speed"
+                    thumbClassName="bg-[#9BC2E4] border-2 border-white shadow-lg hover:bg-[#7BA8D1] focus:ring-2 focus:ring-[#9BC2E4] focus:ring-offset-2 w-6 h-6"
+                    trackClassName="bg-[#F6F6F6] border-2 border-[#9BC2E4] rounded-full h-3 shadow-inner"
+                    rangeClassName="bg-[#9BC2E4]"
                   />
                 </div>
 
                 <Button
                   onClick={() => speakText("This is a test of the text-to-speech functionality")}
                   variant="outline"
-                  className="w-full"
+                  className="w-full border-[#9BC2E4] text-[#3F3734] hover:bg-[#9BC2E4] hover:text-white"
                 >
                   Test Voice
                 </Button>
@@ -295,7 +304,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     setVoiceSpeed([1]);
                   }}
                   variant="outline"
-                  className="w-full"
+                  className="w-full border-[#9BC2E4] text-[#3F3734] hover:bg-[#9BC2E4] hover:text-white"
                 >
                   Reset All Settings
                 </Button>
