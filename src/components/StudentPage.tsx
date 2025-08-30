@@ -1,5 +1,6 @@
 import { FileText, Languages, Volume2, Eye, Download, RefreshCw, Lightbulb, CheckCircle, ArrowLeft } from "lucide-react";
 import { useState } from "react";
+import { useFont } from "@/contexts/FontProvider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -54,6 +55,7 @@ const mockRecommendations: AccessibilityRecommendation[] = [
 ];
 
 export default function StudentPage() {
+  const { isOpenDyslexic } = useFont();
   const [selectedText, setSelectedText] = useState<string>("");
   const [translatedText, setTranslatedText] = useState<string>("");
   const [targetLanguage, setTargetLanguage] = useState<string>("");
@@ -253,7 +255,7 @@ Hauptthemen:
               <Textarea
                 value={selectedText || sampleContent}
                 onChange={(e) => setSelectedText(e.target.value)}
-                className="min-h-96 font-serif text-base leading-relaxed"
+                className={`min-h-96 text-base leading-relaxed ${isOpenDyslexic ? 'font-["OpenDyslexic"]' : 'font-serif'}`}
                 placeholder="Paste your lecture content here to read, translate, or analyze..."
               />
               
@@ -305,7 +307,7 @@ Hauptthemen:
               </CardHeader>
               <CardContent>
                 <div className="bg-gray-50 rounded-lg p-4 max-h-80 overflow-y-auto">
-                  <pre className="whitespace-pre-wrap text-sm font-serif leading-relaxed">
+                  <pre className={`whitespace-pre-wrap text-sm leading-relaxed ${isOpenDyslexic ? 'font-["OpenDyslexic"]' : 'font-serif'}`}>
                     {translatedText}
                   </pre>
                 </div>

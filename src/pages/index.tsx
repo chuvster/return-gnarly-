@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { Search, Bell, User, BookOpen, Calendar, Users, Settings, Menu, X } from "lucide-react";
+import { Search, Bell, User, BookOpen, Calendar, Users, Settings, Menu, X, Text } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,10 +13,12 @@ import LecturePage from "@/components/LecturePage";
 import StudentPage from "@/components/StudentPage";
 import Navigation from "@/components/Navigation";
 import Image from 'next/image';
+import { useFont } from "@/contexts/FontProvider";
 
 type PageView = "dashboard" | "course-detail" | "assessments" | "lectures" | "student-tools";
 
 export default function HomePage() {
+  const { isOpenDyslexic, toggleOpenDyslexic } = useFont();
   const [isAccessibilityPanelOpen, setIsAccessibilityPanelOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentView, setCurrentView] = useState<PageView>("dashboard");
@@ -51,7 +53,6 @@ export default function HomePage() {
     setCurrentView("student-tools");
     setIsMobileMenuOpen(false);
   };
-
   return (
     <>
       <Head>
@@ -96,46 +97,96 @@ export default function HomePage() {
             </div>
 
             {/* Navigation */}
-            <Navigation 
-              isMobileMenuOpen={isMobileMenuOpen} 
-              currentView={currentView}
-              onNavigateToCourses={handleNavigateToCourses}
-              onNavigateToAssessments={handleNavigateToAssessments}
-              onNavigateToLectures={handleNavigateToLectures}
-              onNavigateToStudentTools={handleNavigateToStudentTools}
-            />
+                         <Navigation 
+               isMobileMenuOpen={isMobileMenuOpen} 
+               currentView={currentView}
+               onNavigateToCourses={handleNavigateToCourses}
+               onNavigateToAssessments={handleNavigateToAssessments}
+               onNavigateToLectures={handleNavigateToLectures}
+               onNavigateToStudentTools={handleNavigateToStudentTools}
+             />
 
-            {/* User Profile & Actions */}
-            <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsAccessibilityPanelOpen(true)}
-                className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
-                aria-label="Open accessibility settings"
-              >
-                <Settings className="h-5 w-5" />
-                <span className="sr-only">Accessibility Settings</span>
-              </Button>
-              
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
-                aria-label="Notifications"
-              >
-                <Bell className="h-5 w-5" />
-              </Button>
+                         {/* User Profile & Actions */}
+             <div className="flex items-center gap-4">
+               <div className="relative group">
+                 <Button
+                   variant="ghost"
+                   size="sm"
+                   onClick={toggleOpenDyslexic}
+                   className={`text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white transition-colors ${
+                     isOpenDyslexic ? "bg-white/10" : ""
+                   }`}
+                   aria-label={`${isOpenDyslexic ? 'Disable' : 'Enable'} OpenDyslexic font`}
+                                   >
+                                         <Image
+                       src="/df-icon.png"
+                       alt="Dyslexia Friendly Font"
+                       width={20}
+                       height={20}
+                       className="h-5 w-5"
+                     />
+                  </Button>
+                 
+                 {/* Tooltip */}
+                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-[#3F3734] text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                   Dyslexia Friendly Font
+                   <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#3F3734]"></div>
+                 </div>
+               </div>
 
-              <Button
-                variant="ghost"
-                size="sm"
-                className="w-12 h-12 rounded-full border-2 border-[#3F3734] bg-[#D9D9D9] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
-                aria-label="User profile menu"
-              >
-                <User className="h-6 w-6 text-[#3F3734]" />
-              </Button>
-            </div>
+                               <div className="relative group">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setIsAccessibilityPanelOpen(true)}
+                    className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    aria-label="Open accessibility settings"
+                  >
+                    <Settings className="h-5 w-5" />
+                    <span className="sr-only">Accessibility Settings</span>
+                  </Button>
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-[#3F3734] text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                    Accessibility Settings
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#3F3734]"></div>
+                  </div>
+                </div>
+               
+                               <div className="relative group">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-[#3F3734] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    aria-label="Notifications"
+                  >
+                    <Bell className="h-5 w-5" />
+                  </Button>
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-[#3F3734] text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                    Notifications
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#3F3734]"></div>
+                  </div>
+                </div>
+
+                               <div className="relative group">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-12 h-12 rounded-full border-2 border-[#3F3734] bg-[#D9D9D9] hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                    aria-label="User profile menu"
+                  >
+                    <User className="h-6 w-6 text-[#3F3734]" />
+                  </Button>
+                  
+                  {/* Tooltip */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1 bg-[#3F3734] text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50">
+                    User Profile
+                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-[#3F3734]"></div>
+                  </div>
+                </div>
+             </div>
           </div>
         </header>
 
@@ -168,24 +219,25 @@ export default function HomePage() {
             </>
           )}
 
-          {currentView === "course-detail" && selectedCourseId && (
-            <CourseDetail
-              courseId={selectedCourseId}
-              onBack={handleBackToDashboard}
-            />
-          )}
+                     {currentView === "course-detail" && selectedCourseId && (
+             <CourseDetail
+               courseId={selectedCourseId}
+               onBack={handleBackToDashboard}
+               onNavigateToStudentTools={handleNavigateToStudentTools}
+             />
+           )}
 
           {currentView === "assessments" && (
             <AssessmentPage />
           )}
 
-          {currentView === "lectures" && (
-            <LecturePage />
-          )}
+                     {currentView === "lectures" && (
+             <LecturePage />
+           )}
 
-          {currentView === "student-tools" && (
-            <StudentPage />
-          )}
+           {currentView === "student-tools" && (
+             <StudentPage />
+           )}          
         </main>
 
         {/* Skip Links for Accessibility */}

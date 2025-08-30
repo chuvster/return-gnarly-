@@ -25,9 +25,10 @@ interface Assignment {
 interface CourseDetailProps {
   courseId: string;
   onBack: () => void;
+  onNavigateToStudentTools: () => void;
 }
 
-export default function CourseDetail({ courseId, onBack }: CourseDetailProps) {
+export default function CourseDetail({ courseId, onBack, onNavigateToStudentTools }: CourseDetailProps) {
   // Mock data - in real app, this would be fetched based on courseId
   const course = {
     title: "Introduction to Computer Science",
@@ -213,7 +214,13 @@ export default function CourseDetail({ courseId, onBack }: CourseDetailProps) {
                   <h4 className="font-semibold">Lecture Notes</h4>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">All lecture slides and notes</p>
-                <Button size="sm" variant="outline">Access</Button>
+                                 <Button 
+                   size="sm" 
+                   variant="outline"
+                   onClick={onNavigateToStudentTools}
+                 >
+                   Access
+                 </Button>
               </CardContent>
             </Card>
           </div>
