@@ -232,14 +232,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- **OpenDyslexic Font**: Created by Abelardo Gonzalez
 - **Lucide Icons**: Beautiful, customizable icons
 - **Radix UI**: Accessible component primitives
 - **Tailwind CSS**: Utility-first CSS framework
-
-## 📞 Support
-
-For support, email support@faire-lms.com or create an issue in this repository.
+- **CDN Fonts** - For OpenDyslexic font ('https://fonts.cdnfonts.com/css/opendyslexic'))
+- **Google Fonts** - For Varela Round font (https://fonts.google.com/specimen/Varela+Round)
+- **SpeechSynthesisUtterance** - Used for text-to-speech functionality (https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance)
+- **Softgen AI** - Application monitoring
 
 ## 🔮 Roadmap
 
