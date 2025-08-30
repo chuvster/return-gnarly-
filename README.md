@@ -98,13 +98,6 @@ FAIRE LMS is a modern, accessible Learning Management System designed to provide
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Environment Variables
-Create a `.env.local` file in the root directory:
-```env
-# Add any environment variables here
-NEXT_PUBLIC_API_URL=your_api_url_here
-```
-
 ## 📱 Usage
 
 ### Navigation
