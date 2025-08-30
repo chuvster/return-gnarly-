@@ -126,12 +126,12 @@ export default function CourseDetail({ courseId, onBack, onNavigateToStudentTool
         <TabsContent value="modules" className="space-y-4">
           <h3 className="text-2xl font-bold mb-6 dark:text-[#FFFFF3]">Course Modules</h3>
           {modules.map((module, index) => (
-                         <Card
-               key={module.id}
+            <Card
+              key={module.id}
                className={`transition-all duration-200 hover:shadow-md dark:bg-[#34596F] ${
-                 module.completed ? "bg-green-50 border-green-200" : ""
-               }`}
-             >
+                module.completed ? "bg-green-50 border-green-200" : ""
+              }`}
+            >
               <CardContent className="flex items-center justify-between p-6">
                 <div className="flex items-center gap-4">
                   {module.completed ? (

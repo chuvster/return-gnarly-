@@ -68,15 +68,15 @@ export default function HomePage() {
           onClose={() => setIsAccessibilityPanelOpen(false)} 
         />
 
-        {/* Header */}
-        <header 
-          className="w-full h-21 bg-[#9BC2E4] dark:bg-[#2B4C6F] rounded-b-[20px] shadow-lg relative z-10"
-          role="banner"
-          aria-label="Main navigation"
-        >
-          <div className="max-w-[1280px] mx-auto px-6 py-4 flex justify-between items-center h-full">
+                 {/* Header */}
+         <header 
+           className="fixed top-0 left-0 right-0 h-[84px] bg-[#9BC2E4] dark:bg-[#2B4C6F] rounded-b-[20px] shadow-lg z-50 overflow-hidden"
+           role="banner"
+           aria-label="Main navigation"
+         >
+                                                                                       <div className="w-full px-[30px] py-4 flex justify-between items-center h-full">
             {/* Logo */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
                 size="sm"
@@ -107,7 +107,7 @@ export default function HomePage() {
              />
 
                          {/* User Profile & Actions */}
-             <div className="flex items-center gap-4">
+             <div className="flex items-center gap-2">
                <div className="relative group">
                  <Button
                    variant="ghost"
@@ -123,7 +123,14 @@ export default function HomePage() {
                        alt="Dyslexia Friendly Font"
                        width={20}
                        height={20}
-                       className="h-5 w-5"
+                       className="h-5 w-5 dark:hidden"
+                     />
+                     <Image
+                       src="/df-icon-darkmode.png"
+                       alt="Dyslexia Friendly Font"
+                       width={20}
+                       height={20}
+                       className="h-5 w-5 hidden dark:block"
                      />
                   </Button>
                  
@@ -190,8 +197,8 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="max-w-[1280px] mx-auto px-6 py-8" role="main" id="main-content">
+                 {/* Main Content */}
+         <main className={`max-w-[1280px] mx-auto px-6 py-8 ${isMobileMenuOpen ? 'pt-56' : 'pt-36'}`} role="main" id="main-content">
           {currentView === "dashboard" && (
             <>
               {/* Page Title & Search */}

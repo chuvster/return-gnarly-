@@ -49,8 +49,8 @@ export default function Navigation({
 
   return (
     <>
-      {/* Desktop Navigation */}
-      <nav className="hidden lg:flex items-center gap-8" role="navigation" aria-label="Main navigation">
+             {/* Desktop Navigation */}
+       <nav className="hidden lg:flex items-center gap-4" role="navigation" aria-label="Main navigation">
         {navItems.map((item) => (
           <Button
             key={item.label}
@@ -69,9 +69,9 @@ export default function Navigation({
                  ))}
       </nav>
 
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-[#9BC2E4] border-t border-white/20 lg:hidden z-20">
+             {/* Mobile Navigation Menu */}
+       {isMobileMenuOpen && (
+         <div className="fixed top-[84px] left-0 right-0 bg-[#9BC2E4] dark:bg-[#2B4C6F] border-t border-white/20 lg:hidden z-40 shadow-lg">
           <nav className="px-6 py-4 space-y-2" role="navigation" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Button

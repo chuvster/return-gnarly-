@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { X, Type, Eye, Volume2, Contrast, MousePointer, Keyboard, Moon, Sun } from "lucide-react";
+import { X, Type, Eye, Volume2, Contrast, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
@@ -19,8 +19,6 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
   const [highContrast, setHighContrast] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [screenReader, setScreenReader] = useState(false);
-  const [keyboardNav, setKeyboardNav] = useState(false);
-  const [focusIndicator, setFocusIndicator] = useState(true);
   const [voiceSpeed, setVoiceSpeed] = useState([1]);
 
   useEffect(() => {
@@ -54,14 +52,8 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
         root.classList.remove("reduce-motion");
       }
       
-      // Apply keyboard navigation enhancement
-      if (keyboardNav) {
-        root.classList.add("keyboard-nav");
-      } else {
-        root.classList.remove("keyboard-nav");
-      }
     }
-  }, [fontSize, contrast, darkMode, highContrast, reducedMotion, keyboardNav]);
+  }, [fontSize, contrast, darkMode, highContrast, reducedMotion]);
 
   const speakText = (text: string) => {
     if ("speechSynthesis" in window) {
@@ -200,41 +192,7 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
               </CardContent>
             </Card>
 
-            {/* Navigation Settings */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
-                  <Keyboard className="h-5 w-5" />
-                  Navigation
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
-                  <label htmlFor="keyboard-nav" className="text-sm font-medium text-[#3F3734] dark:text-[#FBF8E6]">
-                    Enhanced Keyboard Navigation
-                  </label>
-                                     <Switch
-                     id="keyboard-nav"
-                     checked={keyboardNav}
-                     onCheckedChange={setKeyboardNav}
-                     aria-label="Toggle enhanced keyboard navigation"
-                   />
-                </div>
-
-                <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-[#34596F] rounded-lg">
-                  <label htmlFor="focus-indicator" className="text-sm font-medium flex items-center gap-2 text-[#3F3734] dark:text-[#FBF8E6]">
-                    <MousePointer className="h-4 w-4" />
-                    Enhanced Focus Indicators
-                  </label>
-                                     <Switch
-                     id="focus-indicator"
-                     checked={focusIndicator}
-                     onCheckedChange={setFocusIndicator}
-                     aria-label="Toggle enhanced focus indicators"
-                   />
-                </div>
-              </CardContent>
-            </Card>
+            
 
             {/* Audio Settings */}
             <Card>
@@ -300,7 +258,6 @@ export default function AccessibilityPanel({ isOpen, onClose }: AccessibilityPan
                     setHighContrast(false);
                     setDarkMode(false);
                     setScreenReader(false);
-                    setKeyboardNav(false);
                     setVoiceSpeed([1]);
                   }}
                   variant="outline"
