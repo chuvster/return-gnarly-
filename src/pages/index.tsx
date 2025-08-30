@@ -12,6 +12,7 @@ import AssessmentPage from "@/components/AssessmentPage";
 import LecturePage from "@/components/LecturePage";
 import StudentPage from "@/components/StudentPage";
 import Navigation from "@/components/Navigation";
+import Image from 'next/image';
 
 type PageView = "dashboard" | "course-detail" | "assessments" | "lectures" | "student-tools";
 
@@ -54,7 +55,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>FAIRE - Learning Management System</title>
+        <title>FAIRE LMS</title>
         <meta name="description" content="Accessible Learning Management System for all students" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -84,9 +85,14 @@ export default function HomePage() {
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </Button>
-              <h1 className="text-[#3F3734] text-4xl lg:text-5xl font-bold tracking-tight">
-                FAIRE
-              </h1>
+              <Image
+                src="/faire-logo.png"
+                alt="FAIRE LMS"
+                width={150}
+                height={600}
+                className="h-[-70px] w-auto"
+                priority
+              />
             </div>
 
             {/* Navigation */}

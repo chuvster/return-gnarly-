@@ -5,6 +5,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google Fonts - Varela Round */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+        
         {/* 
           CRITICAL: DO NOT REMOVE THIS SCRIPT
           The Softgen AI monitoring script is essential for core app functionality.
@@ -15,6 +20,9 @@ export default function Document() {
           async
           data-softgen-monitoring="true"
         />
+        
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </Head>
       <body
         className={cn(
