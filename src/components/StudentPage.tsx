@@ -1,4 +1,4 @@
-import { FileText, Languages, Volume2, Eye, Download, RefreshCw, Lightbulb, CheckCircle } from "lucide-react";
+import { FileText, Languages, Volume2, Eye, Download, RefreshCw, Lightbulb, CheckCircle, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -61,6 +61,8 @@ export default function StudentPage() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [voiceSpeed, setVoiceSpeed] = useState("1");
   const [voiceLanguage, setVoiceLanguage] = useState("en-US");
+
+
 
   // Sample lecture content
   const sampleContent = `Introduction to Computer Science - Lecture 1

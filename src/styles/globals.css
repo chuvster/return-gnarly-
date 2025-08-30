@@ -1,6 +1,18 @@
+/* OpenDyslexic Font */
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fallback font-face declaration */
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://fonts.cdnfonts.com/s/59278/OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --background: 0 0% 100%;

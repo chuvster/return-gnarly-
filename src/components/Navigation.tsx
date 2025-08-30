@@ -1,6 +1,7 @@
 
-import { BookOpen, FileCheck, Upload, Lightbulb } from "lucide-react";
+import { BookOpen, FileCheck, Upload, Lightbulb, Type } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useFont } from "@/contexts/FontProvider";
 
 interface NavigationProps {
   isMobileMenuOpen: boolean;
@@ -19,6 +20,7 @@ export default function Navigation({
   onNavigateToLectures,
   onNavigateToStudentTools
 }: NavigationProps) {
+  const { isOpenDyslexic, toggleOpenDyslexic } = useFont();
   const navItems = [
     { 
       label: "My Courses", 
@@ -66,6 +68,21 @@ export default function Navigation({
             {item.label}
           </Button>
         ))}
+        
+        {/* Font Toggle Button */}
+        <Button
+          variant="ghost"
+          onClick={toggleOpenDyslexic}
+          className={`text-lg font-bold px-3 py-2 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white transition-colors ${
+            isOpenDyslexic 
+              ? "text-[#3F3734] border-b-2 border-[#3F3734]" 
+              : "text-[#3F3734]/80 hover:text-[#3F3734]"
+          }`}
+          aria-label={`${isOpenDyslexic ? 'Disable' : 'Enable'} OpenDyslexic font`}
+        >
+          <Type className="h-4 w-4 mr-2" aria-hidden="true" />
+          OpenDyslexic
+        </Button>
       </nav>
 
       {/* Mobile Navigation Menu */}
@@ -88,6 +105,21 @@ export default function Navigation({
                 {item.label}
               </Button>
             ))}
+            
+            {/* Mobile Font Toggle Button */}
+            <Button
+              variant="ghost"
+              onClick={toggleOpenDyslexic}
+              className={`w-full justify-start text-lg font-bold px-4 py-3 hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white ${
+                isOpenDyslexic 
+                  ? "text-[#3F3734] bg-white/10" 
+                  : "text-[#3F3734]/80"
+              }`}
+              aria-label={`${isOpenDyslexic ? 'Disable' : 'Enable'} OpenDyslexic font`}
+            >
+              <Type className="h-5 w-5 mr-3" aria-hidden="true" />
+              OpenDyslexic
+            </Button>
           </nav>
         </div>
       )}
