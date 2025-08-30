@@ -9,13 +9,13 @@ import AccessibilityPanel from "@/components/AccessibilityPanel";
 import CourseGrid from "@/components/CourseGrid";
 import CourseDetail from "@/components/CourseDetail";
 import AssessmentPage from "@/components/AssessmentPage";
-import LecturePage from "@/components/LecturePage";
+
 import StudentPage from "@/components/StudentPage";
 import Navigation from "@/components/Navigation";
 import Image from 'next/image';
 import { useFont } from "@/contexts/FontProvider";
 
-type PageView = "dashboard" | "course-detail" | "assessments" | "lectures" | "student-tools";
+type PageView = "dashboard" | "course-detail" | "assessments" | "student-tools";
 
 export default function HomePage() {
   const { isOpenDyslexic, toggleOpenDyslexic } = useFont();
@@ -44,10 +44,7 @@ export default function HomePage() {
     setIsMobileMenuOpen(false);
   };
 
-  const handleNavigateToLectures = () => {
-    setCurrentView("lectures");
-    setIsMobileMenuOpen(false);
-  };
+
 
   const handleNavigateToStudentTools = () => {
     setCurrentView("student-tools");
@@ -97,14 +94,13 @@ export default function HomePage() {
             </div>
 
             {/* Navigation */}
-                         <Navigation 
-               isMobileMenuOpen={isMobileMenuOpen} 
-               currentView={currentView}
-               onNavigateToCourses={handleNavigateToCourses}
-               onNavigateToAssessments={handleNavigateToAssessments}
-               onNavigateToLectures={handleNavigateToLectures}
-               onNavigateToStudentTools={handleNavigateToStudentTools}
-             />
+            <Navigation 
+              isMobileMenuOpen={isMobileMenuOpen} 
+              currentView={currentView}
+              onNavigateToCourses={handleNavigateToCourses}
+              onNavigateToAssessments={handleNavigateToAssessments}
+              onNavigateToStudentTools={handleNavigateToStudentTools}
+            />
 
                          {/* User Profile & Actions */}
              <div className="flex items-center gap-2">
@@ -238,12 +234,10 @@ export default function HomePage() {
             <AssessmentPage />
           )}
 
-                     {currentView === "lectures" && (
-             <LecturePage />
-           )}
 
-           {currentView === "student-tools" && (
-             <StudentPage />
+
+                      {currentView === "student-tools" && (
+             <StudentPage onBack={() => setCurrentView("course-detail")} />
            )}          
         </main>
 

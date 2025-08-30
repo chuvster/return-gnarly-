@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 
 interface NavigationProps {
   isMobileMenuOpen: boolean;
-  currentView: "dashboard" | "course-detail" | "assessments" | "lectures" | "student-tools";
+  currentView: "dashboard" | "course-detail" | "assessments" | "student-tools";
   onNavigateToCourses: () => void;
   onNavigateToAssessments: () => void;
-  onNavigateToLectures: () => void;
   onNavigateToStudentTools: () => void;
 }
 
@@ -16,7 +15,6 @@ export default function Navigation({
   currentView, 
   onNavigateToCourses, 
   onNavigateToAssessments,
-  onNavigateToLectures,
   onNavigateToStudentTools
 }: NavigationProps) {
   const navItems = [

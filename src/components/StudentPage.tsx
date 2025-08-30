@@ -19,6 +19,10 @@ interface AccessibilityRecommendation {
   priority: "high" | "medium" | "low";
 }
 
+interface StudentPageProps {
+  onBack?: () => void;
+}
+
 const mockRecommendations: AccessibilityRecommendation[] = [
   {
     id: "1",
@@ -54,7 +58,7 @@ const mockRecommendations: AccessibilityRecommendation[] = [
   }
 ];
 
-export default function StudentPage() {
+export default function StudentPage({ onBack }: StudentPageProps) {
   const { isOpenDyslexic } = useFont();
   const [selectedText, setSelectedText] = useState<string>("");
   const [translatedText, setTranslatedText] = useState<string>("");
@@ -235,6 +239,17 @@ Hauptthemen:
   return (
     <div className="max-w-7xl mx-auto px-6 py-8">
       <div className="mb-8">
+        <div className="flex items-center gap-4 mb-4">
+          <Button
+            onClick={onBack || (() => window.history.back())}
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Course Detail
+          </Button>
+        </div>
         <h1 className="text-4xl font-bold text-[#3F3734] mb-4">Student Learning Tools</h1>
         <p className="text-lg text-gray-600">
           Read content, translate to different languages, and get accessibility recommendations
