@@ -37,7 +37,7 @@ export default function CourseDetail({ courseId, onBack }: CourseDetailProps) {
     totalStudents: 324,
     rating: 4.8,
     description: "This course introduces fundamental concepts in computer science including programming, algorithms, and data structures.",
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=800&h=400&fit=crop"
+    image: "https://i.pinimg.com/736x/c1/12/77/c112770a72c6376c1112f2000a2b80f5.jpg"
   };
 
   const modules: Module[] = [

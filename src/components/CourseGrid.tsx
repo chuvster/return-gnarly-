@@ -32,7 +32,7 @@ const mockCourses: Course[] = [
     progress: 75,
     totalStudents: 324,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/736x/c1/12/77/c112770a72c6376c1112f2000a2b80f5.jpg",
     color: "#E2F1FC",
     nextDeadline: "Assignment 3 - Dec 15",
     status: "active"
@@ -45,7 +45,7 @@ const mockCourses: Course[] = [
     progress: 60,
     totalStudents: 256,
     rating: 4.6,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/1200x/9b/79/c6/9b79c67763e35d7e497c5076af30c203.jpg",
     color: "#E2F1FC",
     nextDeadline: "Quiz 2 - Dec 12",
     status: "active"
@@ -58,7 +58,7 @@ const mockCourses: Course[] = [
     progress: 45,
     totalStudents: 198,
     rating: 4.9,
-    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/736x/e4/b4/64/e4b464e150ca56e9828d84674abbde91.jpg",
     color: "#E2F1FC",
     nextDeadline: "Lab Report - Dec 18",
     status: "active"
@@ -71,7 +71,7 @@ const mockCourses: Course[] = [
     progress: 90,
     totalStudents: 167,
     rating: 4.7,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/736x/04/5a/81/045a8106b3bcda5afb3452e46f060793.jpg",
     color: "#E2F1FC",
     nextDeadline: "Final Exam - Dec 20",
     status: "active"
@@ -84,7 +84,7 @@ const mockCourses: Course[] = [
     progress: 30,
     totalStudents: 203,
     rating: 4.5,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/736x/fc/4d/64/fc4d647ccfd85298118a778e4e1722e5.jpg",
     color: "#E2F1FC",
     nextDeadline: "Project Proposal - Dec 22",
     status: "active"
@@ -97,7 +97,7 @@ const mockCourses: Course[] = [
     progress: 100,
     totalStudents: 134,
     rating: 4.8,
-    image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop",
+    image: "https://i.pinimg.com/1200x/72/32/23/72322390c1e7089e565d43dfde118684.jpg",
     color: "#E2F1FC",
     nextDeadline: undefined,
     status: "completed"
