@@ -50,7 +50,7 @@ export default function Navigation({
   return (
     <>
              {/* Desktop Navigation */}
-       <nav className="hidden lg:flex items-center gap-4" role="navigation" aria-label="Main navigation">
+       <nav className="hidden lg:flex items-center gap-4 ml-auto" role="navigation" aria-label="Main navigation">
         {navItems.map((item) => (
           <Button
             key={item.label}
@@ -63,7 +63,7 @@ export default function Navigation({
             }`}
             aria-current={item.active ? "page" : undefined}
           >
-            <item.icon className="h-4 w-4 mr-2" aria-hidden="true" />
+                         <item.icon className="h-6 w-6 mr-2" aria-hidden="true" />
             {item.label}
           </Button>
                  ))}
@@ -85,7 +85,7 @@ export default function Navigation({
                 }`}
                 aria-current={item.active ? "page" : undefined}
               >
-                <item.icon className="h-5 w-5 mr-3" aria-hidden="true" />
+                                 <item.icon className="h-7 w-7 mr-3" aria-hidden="true" />
                 {item.label}
               </Button>
                          ))}

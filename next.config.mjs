@@ -10,6 +10,10 @@ const nextConfig = {
     ],
   },
   allowedDevOrigins: ['*.daytona.work'],
+  devIndicators: {
+    buildActivity: false,
+    buildActivityPosition: 'bottom-left',
+  },
 };
 
 export default nextConfig;
