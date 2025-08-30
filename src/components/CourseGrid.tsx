@@ -232,19 +232,6 @@ export default function CourseGrid({ onCourseSelect }: CourseGridProps) {
           </div>
         </Card>
       ))}
-
-      {/* Add Course Card */}
-      <Card className="group flex items-center justify-center h-64 border-2 border-dashed border-neutral-300 hover:border-[#9BC2E4] rounded-3xl bg-gradient-to-br from-neutral-50 to-white transition-all duration-300 cursor-pointer">
-        <div className="text-center p-6">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#9BC2E4]/20 flex items-center justify-center group-hover:bg-[#9BC2E4]/30 transition-colors">
-            <BookOpen className="h-8 w-8 text-[#9BC2E4]" />
-          </div>
-          <h3 className="font-semibold text-[#3F3734] mb-2">Enroll in New Course</h3>
-          <p className="text-sm text-[#3F3734]/70">
-            Browse available courses and expand your learning
-          </p>
-        </div>
-      </Card>
     </div>
   );
 }
