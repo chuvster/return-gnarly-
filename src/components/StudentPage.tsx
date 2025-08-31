@@ -67,7 +67,8 @@ export default function StudentPage({ onBack }: StudentPageProps) {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [voiceSpeed, setVoiceSpeed] = useState("1");
   const [voiceLanguage, setVoiceLanguage] = useState("en-US");
-
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
 
   // Sample lecture content
@@ -201,10 +202,55 @@ Hauptthemen:
 
   const handleTextToSpeech = (text: string) => {
     if ("speechSynthesis" in window) {
+      // Stop any current speech
+      speechSynthesis.cancel();
+      
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = parseFloat(voiceSpeed);
       utterance.lang = voiceLanguage;
+      
+      // Set up event listeners
+      utterance.onstart = () => {
+        setIsSpeaking(true);
+        setIsPaused(false);
+      };
+      
+      utterance.onend = () => {
+        setIsSpeaking(false);
+        setIsPaused(false);
+      };
+      
+      utterance.onpause = () => {
+        setIsPaused(true);
+      };
+      
+      utterance.onresume = () => {
+        setIsPaused(false);
+      };
+      
       speechSynthesis.speak(utterance);
+    }
+  };
+
+  const handlePauseSpeech = () => {
+    if ("speechSynthesis" in window) {
+      if (speechSynthesis.speaking) {
+        if (speechSynthesis.paused) {
+          speechSynthesis.resume();
+          setIsPaused(false);
+        } else {
+          speechSynthesis.pause();
+          setIsPaused(true);
+        }
+      }
+    }
+  };
+
+  const handleStopSpeech = () => {
+    if ("speechSynthesis" in window) {
+      speechSynthesis.cancel();
+      setIsSpeaking(false);
+      setIsPaused(false);
     }
   };
 
@@ -282,6 +328,35 @@ Hauptthemen:
                 >
                   <Volume2 className="h-4 w-4 mr-2" />
                   Read Aloud
+                </Button>
+                
+                <Button
+                  onClick={handlePauseSpeech}
+                  variant="outline"
+                  size="sm"
+                  disabled={!isSpeaking}
+                >
+                  {isPaused ? (
+                    <>
+                      <RefreshCw className="h-4 w-4 mr-2" />
+                      Resume
+                    </>
+                  ) : (
+                    <>
+                      <Volume2 className="h-4 w-4 mr-2" />
+                      Pause
+                    </>
+                  )}
+                </Button>
+
+                <Button
+                  onClick={handleStopSpeech}
+                  variant="outline"
+                  size="sm"
+                  disabled={!isSpeaking}
+                >
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  Stop
                 </Button>
                 
                 <Button
